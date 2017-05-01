@@ -32,7 +32,7 @@ a{ color: inherit; }
   margin: 0;
   margin-top: 1.25in;
   margin-left: 1in;
-  border: 1px dashed #ccc;
+  border: 1px dashed;
   border-radius: 0;
 }
 
@@ -82,7 +82,7 @@ a{ color: inherit; }
   height: 6in;
   overflow: hidden;
   padding: 0.25in 0.3in;
-  float:left;
+display: table-cell;
   position: relative;
 }
 
@@ -99,10 +99,9 @@ a{ color: inherit; }
   background: none;
   font-size: 9pt;
 background-color: #fafafa;
-float:right;
 }
 #intro .method {
-  border:1px dashed #ccc;
+  border:1px dashed;
 }
 
 #intro .method--panel {
@@ -137,14 +136,16 @@ float:right;
 
 
 
-.method--title{ font-size: 32pt !important; }
-.method h1{ font-size: 14pt; }
+.method .method--title {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .method h2{ font-size: 12pt; }
 
 .method .method--section--what p,
-.method .method--section--why p,
-.method .method--section--category p,
-.method .method--section--time-required p{
+.method .method--section--why p {
 	font-size: 14pt;
 	line-height: 1.3;
 	font-weight: normal;
@@ -183,5 +184,15 @@ float:right;
 #intro nav strong {display:block;}
 #intro .intro-card-header {line-height: .7in;display: block;}
 #intro .intro-card-header img {width:.5in;margin-bottom:.5in;}
-.method .method--section--category{ min-width:0;padding-right:.5in; }
-.method .method--section--time-required{}
+.method .method--section--category{ min-width:0;padding-right:.5in; border-color:inherit; }
+.method .method--section--time-required{border-color:inherit;}
+
+.category--fundamentals {
+  .method {border-color: $color-inverse;}
+  .method--panel--front {
+    color: $color-inverse;
+    .method--title a {
+      color: $color-inverse;
+    }
+  }
+}
